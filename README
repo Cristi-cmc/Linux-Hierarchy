@@ -1,0 +1,53 @@
+Cristea Marius-Cristian,313CB
+punctajul obtinul local este: 135p teste, 18p Valgrind
+
+--- main ---
+-am creat directorul ROOT;
+-am declarat o variabila de tip directory* care sa retina adresa directorului
+curent, numita d_cr - initial pointeaza catre root;
+
+-citind de la stdin linie cu linie, am apelat functiile touch, mkdir, ls
+rmdir, rm, cd, pwd, find;
+
+-pentru pwd si find mi-am alocat o matrice de stringuri care sa retina numele
+directoarelor (in ordine inversa);
+
+-variabila "found" are rolul stoca rezultatul unei verificari
+(daca exista sau nu un fisier/director);
+
+--- fisierele de functii (FunctiiD, FunctiiF) ---
+-in principiu sunt aceleasi functii dar pentru structuri diferite
+(files & directories);
+
+-cautaF si cautaDir fac acelasi lucru, cauta in arbori un fisier/director;
+
+-mkdir si touch creeaza directoare/fisiere;
+-structura acestor functii seamana cu functia insert_ABC din laboratorul 8;
+(de acolo am luat-o si modificat-o)
+
+-functiile afi_F si afi_D afiseaza arbori de directori/files;
+
+-functiile minF si minD cauta cel mai mic nod(criteriu: nume);
+
+-functia ls afiseaza toate directoarele si fisierele din directorul parinte;
+(daca exista sau nu fisiere/directoare)
+
+-functiile DistrF si DistrD elibereaza arbori de directoare/fisiere;
+(DistrD apeleaza si functia DistrF pentru a distruge arborele de fisiere)
+
+-functiile rm rmdir sterg pe baza unui nume un fisier,director
+-in cazul directorului se sterg si directoarele din interiorul directorului
+-si fisierele;
+
+-functia pwd afiseaza calea directorului curent
+-folosesc o matrice de stringuri pentru a retine numele directoarelor si pentru
+-a ma intoarce la locatia curenta;
+
+-functiile cauta si cautaFF sunt folosite pentru find
+-foarte similare cu cautaF si cautaDir
+-diferenta este ca afiseaza daca gasesc fisierul/directorul
+-daca nu gasesc fisierul, directorul, valoarea lui found este actualizata
+-daca found este diferit de 0, atunci nu a fost gasit fisierul/directorul;
+
+comanda "quit" elibereaza toata memoria alocata
+-daca intelegeti de ce imi pica valgrind-ul din cauza lui strdup la unele teste as aprecia sa-mi ziceti 
